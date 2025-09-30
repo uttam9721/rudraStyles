@@ -1,23 +1,20 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 const Login = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
 
     const onSubmitHandler=async(e)=>{
+      e.preventDefault();
         try {
-            e.preventDefault();
-            // console.log(email,password);
+          const response = await axios.post(`${backendUrl}/api/user/admin`,{email,password})
             setEmail("");
             setPassword("");
-             const response = await axios.post(`${backendUrl}/api/user/admin`,{email,password})
             console.log(response);
-            
-            
-            
         } catch (error) {
-            
+          console.error(error);  
         }
     }
 
