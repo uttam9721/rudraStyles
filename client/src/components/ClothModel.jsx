@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Center } from "@react-three/drei";
 
 const Shirt = () => {
-  const { scene } = useGLTF("/models/tshirt.glb");
+  const { scene } = useGLTF("/models/shop.glb");
   return (
     <Center>
       <primitive object={scene} scale={1.5} />
@@ -34,6 +34,6 @@ const ClothModel = () => {
   );
 };
 
-useGLTF.preload("/models/tshirt.glb");
+useGLTF.preload("/models/shop.glb");
 
 export default ClothModel;
