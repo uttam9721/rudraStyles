@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* Shadow Layer */}
           <h1 className="absolute inset-0 text-[14rem] font-extrabold 
-                         text-gray-300 blur-md translate-x-3 translate-y-3">
+                         text-gray-700 blur-md translate-x-3 translate-y-3">
             RudraStyles
           </h1>
 

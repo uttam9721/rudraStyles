@@ -19,7 +19,7 @@ a.active hr{
     }
     
 } */
-
+/* 
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -34,4 +34,17 @@ a.active hr{
 
 .animate-float {
   animation: float 8s ease-in-out infinite;
+} */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
