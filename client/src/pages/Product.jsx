@@ -33,6 +33,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets'
+import RelatedProducts from './../components/RelatedProducts';
 
 const Product = () => {
   const { productId } = useParams()
@@ -122,6 +123,20 @@ const fetchProductData = () => {
       </div>
 
       </div>
+      <div className='mt-20'>
+        <div className='flex'>
+          <b className='border  border-[#CCC] px-5 py-3 text-sm'>Description</b>
+          <p className='border border-[#CCC] px-5 py-3 test-sm'>Review(150)</p>
+        </div>
+        <div className='flex flex-col gap-4 border  border-[#CCC] px-6 text-sm text-gray-500'>
+          <p>An e-commerce website is an online platform  that facilitates the buying and seller</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quam incidunt rem distinctio laudantium. Sunt quisquam cumque explicabo officia expedita.</p>
+
+        </div>
+
+      </div>
+      {/* display related products */}
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
    
       {/* <h1 className="text-lg font-semibold">₹{productData.price}</h1>
       <p className="text-gray-600">{productData.description}</p> */}
