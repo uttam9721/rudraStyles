@@ -47,6 +47,29 @@ const ShopContextProvider = (props) => {
     return totalCount;
   }
 
+  const updateQuantity = (id, size, quantity) => {
+  setCartItems(prev => ({
+    ...prev,
+    [id]: {
+      ...prev[id],
+      [size]: quantity
+    }
+  }))
+}
+
+const removeFromCart = (id, size) => {
+  setCartItems(prev => {
+    const updated = { ...prev }
+    delete updated[id][size]
+
+    if (Object.keys(updated[id]).length === 0) {
+      delete updated[id]
+    }
+    return updated
+  })
+}
+
+
   useEffect(()=>{
 
   },[cartItems])
@@ -60,7 +83,9 @@ const ShopContextProvider = (props) => {
     setShowSearch,
     cartItems,
     addToCart,
-    getCartCount
+    getCartCount,
+     updateQuantity,
+  removeFromCart
 
   };
 
