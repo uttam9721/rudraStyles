@@ -1,5 +1,6 @@
 import React from 'react'
 import {Routes,Route, BrowserRouter} from 'react-router-dom'
+import { Toaster } from "react-hot-toast";
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import About from './pages/About'
@@ -15,6 +16,7 @@ import SearchBar from './components/SearchBar';
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+      <Toaster position="top-center" reverseOrder={false} />
      <BrowserRouter>
       <Navbar path='/navbar' element={<Navbar/>} />
       <SearchBar />
@@ -37,3 +39,6 @@ const App = () => {
 }
 
 export default App
+
+
+
