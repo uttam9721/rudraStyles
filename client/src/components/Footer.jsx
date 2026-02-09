@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-
+import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="relative bg-white text-gray-600 overflow-hidden pt-28 sm:pt-44">
@@ -89,6 +89,26 @@ const Footer = () => {
           © 2026 RudraStyles. All rights reserved.
         </p>
       </div>
+      {/* ================= FOLLOW US INSTAGRAM BUTTON ================= */}
+<a
+  href="https://www.instagram.com/rudrafashionhouse9695"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="absolute bottom-6 right-2
+             flex items-center gap-2
+             bg-black text-white
+             px-5 py-2
+             rounded-full
+             text-sm font-medium
+             hover:bg-gray-800
+             transition-all duration-300
+             shadow-lg z-50"
+>
+  <FaInstagram className="text-base" />
+  <span>Follow us</span>
+</a>
+
+
     </footer>
   );
 };
