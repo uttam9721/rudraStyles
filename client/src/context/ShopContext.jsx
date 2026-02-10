@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createContext,useState } from "react";
 import { products } from "../assets/assets";
+// import { useNavigate } from "react-router-dom";
 
 export const ShopContext = createContext();
 
@@ -10,6 +11,7 @@ const ShopContextProvider = (props) => {
   const [search,setSearch]=useState('');
   const [showSearch,setShowSearch]=useState(false)
   const [cartItems,setCartItems]=useState({});
+  // const navigate =useNavigate();
 
 
   const addToCart=async(itemId,size)=>{
@@ -69,6 +71,50 @@ const removeFromCart = (id, size) => {
   })
 }
 
+// const getCartAmount=()=>{
+//         let totalAmout=0;
+//         for(const items in cartItems){
+//           let iteminfo=products.find((product)=>product._id===items);
+//           for(const item in cartItems[items]){
+//             try {
+//               if(cartItems[items][item]>0){
+//                 totalAmout+=iteminfo.price*cartItems[items][item]
+//               }
+//             } catch (error) {
+              
+//             }
+//           }
+
+//         }
+// }
+
+
+const getCartAmount =() => {
+  let totalAmount = 0;
+
+  for (const productId in cartItems) {
+    const productInfo = products.find(
+      (product) => product._id === productId
+    );
+
+    if (!productInfo) continue;
+
+    for (const size in cartItems[productId]) {
+      const quantity = cartItems[productId][size];
+
+      if (quantity > 0) {
+        totalAmount += productInfo.price * quantity;
+      }
+    }
+  }
+
+  return totalAmount;
+};
+
+
+
+
+
 
   useEffect(()=>{
 
@@ -85,7 +131,9 @@ const removeFromCart = (id, size) => {
     addToCart,
     getCartCount,
      updateQuantity,
-  removeFromCart
+  removeFromCart,
+  getCartAmount,
+  // navigate,
 
   };
 
