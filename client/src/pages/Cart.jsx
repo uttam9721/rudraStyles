@@ -78,9 +78,11 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import CartTotal from './../components/CartTotal';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Cart = () => {
+  const navigate=useNavigate();
 
   const {
     products,
@@ -88,7 +90,7 @@ const Cart = () => {
     cartItems,
     updateQuantity,
     removeFromCart,
-    navigate
+    // navigate
   } = useContext(ShopContext)
 
   const [cartData, setCartData] = useState([])
