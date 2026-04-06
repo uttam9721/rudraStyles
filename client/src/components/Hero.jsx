@@ -296,7 +296,8 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#fff7ed] via-white to-[#fff]">
+    // <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#fff7ed] via-white to-[#fff]">
+    <section className="relative min-h-[90vh] flex items-center pt-24 overflow-hidden bg-gradient-to-br from-[#fff7ed] via-white to-[#fff]">
 
       {/* Decorative Blobs */}
       <div className="absolute top-[-80px] left-[-80px] w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-40"></div>

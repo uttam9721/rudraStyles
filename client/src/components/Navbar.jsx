@@ -8,7 +8,8 @@ const Navbar = () => {
     const [visible,setVisible]=useState(false)
     const {setShowSearch,getCartCount}=useContext(ShopContext)
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    // <div className='flex items-center justify-between py-5 font-medium z-50'>
+    <div className='fixed top-0 left-0 w-full bg-white z-50 flex items-center justify-between py-5 px-6 font-medium shadow-sm'>
         <NavLink to={'/'}>
       <img src={assets.logo} alt="logo" className='w-36' />
         </NavLink>
